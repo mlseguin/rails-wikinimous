@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to article_path(@article)
     else
-      
+
     end
   end
 
@@ -25,9 +25,13 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    @article.update(article_params)
+    redirect_to article_path(@article)
   end
 
   def destroy
+    @article.destroy
+    redirect to articles_path, status: :see_other
   end
 
   private
