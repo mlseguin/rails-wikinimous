@@ -8,4 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Article.create(title: 'The meaning of life', content: "It's 42!")
+require 'faker'
+
+10.times do
+  Article.create(
+    title: Faker::FunnyName.name,
+    content: Faker::Quote.famous_last_words
+  )
+end
