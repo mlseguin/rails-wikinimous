@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect to articles_path, status: :see_other
+    redirect_to articles_path, status: :see_other
   end
 
   private
